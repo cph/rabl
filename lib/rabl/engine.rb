@@ -341,7 +341,7 @@ module Rabl
         end
 
         use_callback = Rabl.configuration.enable_json_callbacks && request_params[:callback].present?
-        json_output = "#{request_params[:callback]}(#{json_output})" if use_callback
+        json_output = "/**/#{request_params[:callback]}(#{json_output})" if use_callback
 
         json_output
       end
